@@ -14,12 +14,12 @@
 <meta name="apple-mobile-web-app-title" content="CRM">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Geologica:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Sitka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <title>Преподаватель CRM</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Geologica', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; -webkit-tap-highlight-color: transparent; }
+  * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Sitka', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; -webkit-tap-highlight-color: transparent; }
   body { background: radial-gradient(circle at 8% 0%, #f1e9ff 0, transparent 28%), radial-gradient(circle at 95% 15%, #ffe8ee 0, transparent 24%), #f8f5ef; color: #272238; padding-bottom: 70px; }
 
   /* ========== ШАПКА ========== */
@@ -47,7 +47,7 @@
   }
   .tab {
     flex: 1; padding: 10px 3px; text-align: center;
-    font-size: 10px; color: #8b7aa8; cursor: pointer;
+    font-size: 13px; color: #8b7aa8; cursor: pointer;
     user-select: none; transition: color 0.2s;
   }
   .tab.active { color: #5d3d91; font-weight: 700; }
@@ -365,7 +365,7 @@
   .modal p.sub { color: #8b7aa8; font-size: 13px; margin-bottom: 14px; }
 
   /* ========== КРАСИВЫЙ ЖУРНАЛ ========== */
-  .journal-table { font-family:'Geologica',sans-serif; border-collapse:separate; border-spacing:0; }
+  .journal-table { font-family:'Sitka',sans-serif; border-collapse:separate; border-spacing:0; }
   .journal-table th { background:linear-gradient(135deg,#7655b8,#9a70d1); color:white; border-color:#d9c8ef; }
   .journal-table th .dow-th,.journal-table th .date-th { color:white; }
   .journal-table td { border-color:#e8ddf7; }
@@ -375,16 +375,16 @@
   .journal-table td.mark-cell[data-mark="б"] { background:#fff5e8; }
   .journal-table th:first-child { border-top-left-radius:10px; }
   .journal-table th:last-child { border-top-right-radius:10px; }
-  .student-edit-name { font-family:'Geologica',sans-serif; font-weight:700; font-size:16px; }
+  .student-edit-name { font-family:'Sitka',sans-serif; font-weight:700; font-size:16px; }
 
   /* ========== ПЕЧАТЬ ЖУРНАЛА ========== */
-  .print-journal { font-family:'Geologica',Arial,sans-serif; color:#29213b; background:white; }
-  .print-journal h1,.print-journal h2 { font-family:'Geologica',Arial,sans-serif; }
+  .print-journal { font-family:'Sitka',Arial,sans-serif; color:#29213b; background:white; }
+  .print-journal h1,.print-journal h2 { font-family:'Sitka',Arial,sans-serif; }
   .print-page { page-break-after:always; }
   .print-page:last-child { page-break-after:auto; }
   .print-top { display:grid; grid-template-columns:1fr 1.35fr 1fr; gap:10px; align-items:end; margin-bottom:6mm; }
   .print-field { font-size:9pt; border-bottom:1px solid #8b7aa8; padding:0 2mm 1.5mm; min-height:7mm; }
-  .print-title { text-align:center; font-family:'Geologica',sans-serif; font-size:18pt; font-weight:700; color:#56388f; margin-bottom:2mm; }
+  .print-title { text-align:center; font-family:'Sitka',sans-serif; font-size:18pt; font-weight:700; color:#56388f; margin-bottom:2mm; }
   .print-subtitle { text-align:center; font-size:9pt; color:#7b6a98; margin-bottom:5mm; }
   .print-table { width:100%; border-collapse:collapse; table-layout:fixed; font-size:8.5pt; }
   .print-table th,.print-table td { border:1px solid #8e7ca4; text-align:center; padding:1.5mm 1mm; height:8mm; }
@@ -490,7 +490,7 @@
     }
     .tab {
       padding:7px 2px 4px;
-      font-size:10px;
+      font-size:12px;
       line-height:1.15;
       display:flex;
       flex-direction:column;
@@ -1977,7 +1977,7 @@ window.exportJournalPDF = async () => {
   if (!printWindow) { alert('Браузер заблокировал окно печати. Разрешите всплывающие окна для этого сайта.'); return; }
   printWindow.document.open();
   printWindow.document.write(`<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>Журнал — ${esc(group.name)}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Geologica:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Sitka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>${document.querySelector('style').textContent}</style>
   </head><body class="print-journal">${pages}</body></html>`);
   printWindow.document.close();
@@ -2191,7 +2191,7 @@ function drawWheel() {
     ctx.translate(cx,cy);
     ctx.rotate(i*arc+arc/2+wheelAngle);
     ctx.fillStyle = '#fff';
-    ctx.font = '600 ' + Math.max(11, size*0.045) + 'px Geologica, sans-serif';
+    ctx.font = '600 ' + Math.max(11, size*0.045) + 'px Sitka, sans-serif';
     ctx.textAlign = 'right';
     ctx.textBaseline = 'middle';
     ctx.fillText(n.length>16?n.slice(0,15)+'…':n, r-10, 0);
